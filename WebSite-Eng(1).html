@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <title>Websyte Programmer Ibraheem Aljaray</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Cairo|Lalezar|Lemonada" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Bangers|Concert+One|Cookie|Lobster|Pacifico|Righteous" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  
+<!--  __________________________________________ (1) ______________________________________________  -->
+<!--                                            (CSS)                                                -->
+
+  <style>
+  body {
+    font: 400 15px Lato, sans-serif;
+    line-height: 1.8;
+    color: #818181;
+    font-family: 'Cairo', sans-serif;
+  }
+  h2 {
+    font-size: 24px;
+    text-transform: uppercase;
+    color: #303030;
+    font-weight: 600;
+    margin-bottom: 30px;
+    font-family: 'Cairo', sans-serif;
+  }
+  h4 {
+    font-size: 19px;
+    line-height: 1.375em;
+    color: #303030;
+    font-weight: 400;
+    margin-bottom: 30px;
+    font-family: 'Cairo', sans-serif;
+  }
+  .h1t{
+    font-family: 'Righteous', cursive;
+  } 
+  .h1tt{
+    font-family: 'Pacifico', cursive;
+  }
+  .jumbotron {
+    background-color: #1C2833 ;
+    color: #fff;
+    padding: 100px 25px;
+    font-family: 'Lemonada', cursive;
+  }
+  .container-fluid {
+    padding: 50px 40px;
+  }
+  .bg-grey {
+    background-color: #f6f6f6;
+  }
+  .logo-small {
+    color: #263238;
+    font-size: 50px;
+    font-family: 'Cairo', sans-serif;
+  }
+  .logo {
+    color: #263238;
+    font-size: 200px;
+    font-family: 'Cairo', sans-serif;
+  }
+  .thumbnail {
+    padding: 0 0 15px 0;
+    border: none;
+    border-radius: 0;
+  }
+  .thumbnail img {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 10px;
+  }
+  .carousel-control.right, .carousel-control.left {
+    background-image: none;
+    color: #263238;
+  }
+  .carousel-indicators li {
+    border-color: #1B2631;
+  }
+  .carousel-indicators li.active {
+    background-color: #1B2631;
+  }
+  .item h4 {
+    font-size: 19px;
+    line-height: 1.375em;
+    font-weight: 400;
+    font-style: italic;
+    margin: 70px 0;
+    font-family: 'Cairo', sans-serif;
+  }
+  .item span {
+    font-style: normal;
+  }
+  .panel {
+    border: 1px solid #1B2631; 
+    border-radius:0 !important;
+    transition: box-shadow 2.5s;
+  }
+  .panel:hover {
+    box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+  }
+  .panel-footer .btn:hover {
+    border: 1px solid #1B2631;
+    background-color: #fff !important;
+    color: #1B2631;
+  }
+  .panel-heading {
+    color: #fff !important;
+    background-color: #1B2631 !important;
+    padding: 15px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+  .panel-footer {
+    background-color: white !important;
+  }
+  .panel-footer h3 {
+    font-size: 32px;
+    font-family: 'Cairo', sans-serif;
+  }
+  .panel-footer h4 {
+    color: #aaa;
+    font-size: 14px;
+    font-family: 'Cairo', sans-serif;
+  }
+  .panel-footer .btn {
+    margin: 15px 0;
+    background-color: #263238;
+    color: #fff;
+  }
+  .navbar {
+    margin-bottom: 0;
+    background-color: #1C2833;
+    z-index: 9999;
+    border: 0;
+    font-size: 18px !important;
+    line-height: 1.42857143 !important;
+    border-radius: 0;
+    font-family: 'Cairo', sans-serif;
+  }
+  .navbar li a, .navbar .navbar-brand {
+    color: #fff !important;
+  }
+  .navbar-nav li a:hover, .navbar-nav li.active a {
+    color: #1f292e !important;
+    background-color: #fff !important;
+  }
+  .navbar-default .navbar-toggle {
+    border-color: transparent;
+    color: #fff !important;
+  }
+  footer .glyphicon {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #263238;
+    font-family: 'Cairo', sans-serif;
+  }
+  .slideanim {visibility:hidden;}
+  .slide {
+    animation-name: slide;
+    -webkit-animation-name: slide;
+    animation-duration: 2s;
+    -webkit-animation-duration: 2s;
+    visibility: visible;
+  }
+  .button {
+  background-color: white;
+  border: 12px;
+  color: black;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  -webkit-transition-duration: 0.4s; 
+  transition-duration: 0.4s;
+  cursor: pointer;}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.4s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.4s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+.button{border-radius: 12px;}
+.button2{width: 60%;
+ text-decoration: underline }
+.button:hover{
+  background-color: #555555;
+  color: white;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);}
+  
+.button3- {
+  background-color:#fff;
+  border: 12px;
+  color: #b33939;
+  padding: 16px 32px;
+  font-size: 20px;
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 2px 1px;
+  -webkit-transition-duration: 0.5s; 
+  transition-duration: 0.5s;
+  cursor: pointer;}
+
+  .button3:{width: 25%;}
+  .button3:hover{
+    background-color: #b33939;
+    color: white;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.35), 0 17px 50px 0 rgba(0,0,0,0.35);
+ }
+
+/*_________________________________________________   */ 
+
+{
+  font-family: 'Lato', sans-serif;
+}
+.overlay {
+  height: 0%;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: black ;
+  background-color: rgba(0,0,0, 0.9);
+  overflow-y: hidden;
+  transition: 0.5s;
+}
+.overlay-content {
+  position: relative;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+.overlay a:hover, .overlay a:focus {
+  color: #f1f1f1;
+}
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+@media screen and (max-height: 450px) {
+  .overlay {overflow-y: auto;}
+  .overlay a {font-size: 20px}
+  .overlay .closebtn {
+  font-size: 40px;
+  top: 15px;
+  right: 35px;
+  }
+}
+/*_________________________________________________   */
+
+
+  @keyframes slide {
+    0% {
+      opacity: 0;
+      transform: translateY(70%);
+    } 
+    100% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
+  @-webkit-keyframes slide {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateY(70%);
+    } 
+    100% {
+      opacity: 1;
+      -webkit-transform: translateY(0%);
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .col-sm-4 {
+      text-align: center;
+      margin: 25px 0;
+    }
+    .btn-lg {
+      width: 100%;
+      margin-bottom: 35px;
+    }
+  }
+  @media screen and (max-width: 300px) {
+    .logo {
+      font-size: 150px;
+    }
+  }
+  </style>
+  </head>
+
+<!--_________________________________________(The End CSS "#1")______________________________________________  -->
+
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">}
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#myPage"><big><strong> H E E M </strong></big></a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#about"> الصفحة الرئيسية  </a></li>
+        <li><a href="#services">المٌحصله المعرفيه </a></li>
+        <li><a href="#pricing">الدورات التدريبة </a></li>
+        <li><a href="#contact"> للتواصل والدعم </a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!--___________________________________________( 2 )______________________________________________  -->
+
+<div class="jumbotron text-center">
+  <h1 class="h1t"><big><i> Website </i> <strong> < HEEM /> </strong></big></h1> <br>
+  <h1 class="h1tt"><i> Programming</i> </h1> 
+     <form>
+    </div>
+  </form>
+</div>
+<!--___________________________________________( 2 )______________________________________________  -->
+<div id="about" class="container-fluid">
+  <div class="row">
+    <div class="col-sm-8">
+      <center>
+         <h2>  نبذة عامة عن الموقع    </h2>
+        <h4>
+نقدم في هذا الموقع الدورات والدروس المجانيه للمبتدئين عبر مستويات تبدأ من المستوى الأول حتى المستوى الرابع تدريجياً 
+هذه الدورات قدمها نخبه من المبرمجين مع "حفض كامل حقوقهم" ونحن بدورنا نختار أفضل الدروس ونرتبها عبر مستويات 
+لتسهيل عملية التعلم وبعد كل مستوى يوجد مقال خاص يوجد فيه النقاط المفترض اتقانها بعد انهاء هذا المستوى 
+كما توجد السيره الذاتيه لمبرمج هذا الموقع وقنوات التواصل معه شخصياً للإستفسارات  </h4>
+
+  <br>
+        <h2 style="text-decoration: ;"><big> لـمـحـة عـامـة عـن الـمـُـبـرمـج  </big></h2>
+  <center>
+    <a href="index.html/Bootun/bot-1.html">
+        <button class="button button2"style="vertical-align:middle">
+          <span>
+            <big>
+              <strong>
+               نُـبـذة تـعـريـفـيـة  
+             </strong>
+           </big>
+         </span> 
+        </button> 
+
+     <br>
+    </a>
+    <a href="index.html/home-img/H1.html"target="_BLANK">
+        <button class="button button2"style="vertical-align:middle">
+          <span>
+            <big>
+              <strong>
+               مـعـرض الـصـور 
+             </strong>
+           </big>
+         </span> 
+        </button>
+    </a>
+      <br>
+        </a>
+        <!--
+  <a href="index.html/Bootun2/bot-2.html"target="_BLANK">
+        <button class="button button2"style="vertical-align:middle">
+          <span>
+            <big>
+              <strong>
+               لكُل مـن دعـمني  
+             </strong>
+           </big>
+         </span> 
+        </button>
+      <br>
+  </a>
+</center>
+-->
+</center>
+  </div>
+    <div class="col-sm-4">
+      <br>
+        <span class="globe logo slideanim">
+          <img style="width: 85%;height: 95%" src="img-2/w-b-C/R (22)-.png">
+        </span>
+     </div>
+  </div>
+</div>
+<!--___________________________________________( 4 )______________________________________________  -->
+<div class="container-fluid bg-grey">
+  <div class="row">
+    <div class="col-sm-4">
+      <span class="globe logo slideanim">
+        <img style="width: 85%;height: 95%" src="img-2/w-b-C/R (23).png">
+          <br>
+           </span>    
+       </div>
+    <div class="col-sm-8">
+  <center> <h2> البرمجة لغة المستقبل   </h2>
+      <h4><strong>رسالة المبرمج  :</strong>  البرمجة لغة المستقبل القريب والمبرمجين قادة المستقبل 
+المستقبل لا يتعرف إلا بلغات البرمجه وعالم البرمجيات والتقنيات 
+البرمجه ليست سهله وليست صعبه وتعتمد على قدرات الشخص وصبره 
+البرمجه تعلمك التفكير بعقل منطقي يتعامل مع كل شيء وفق المعطيات 
+بإختصار " البرمجه لا يتقنها ويتعلمها ويتستمتع بأخطائها المتكرره إلا العباقره ".</h4><hr><br>
+
+      <p><strong><big><strong>الهدف والرؤيه :</strong></big></strong><big>تم إنشاء هذا الموقع بهدف المساهمه في دفع عجلة التنميه والتطور ونشر العلم في العالم العربي ولاشك ان علوم البرمجه او هندسة البرمجيات هي من اهم العلوم التي يتطلع لها المستقبل ان لم تكن الاهم ولهذا الهدف وضعنا رؤيتنا التي تتطلع الى صقل مهارات المبرمجين المبتدئين ولضمان افضل النتائج فقد تم جمع أفضل الدروس الموجوده في الإنترنت وترتيبها بشكل ميسر وبسيط .</big></p>
+    </center>
+    </div>
+  </div>
+</div>
+
+<!--___________________________________________( 5 )______________________________________________  -->
+
+<div id="services" class="container-fluid text-center">
+  <h2> المٌحصله المعرفيه  </h2>
+  <h4> ..بعد إتمامك للدورات التاليه ستتمكن من إتقان التالي  </h4>
+  <hr><br>
+  <div class="row slideanim">
+    <div class="col-sm-4">
+      <span class="glyphicon"> 
+        <img src="Img-2/ALL-C/B (10).png"style="width: 25%;height: 25%" >
+      </span>
+      <h4><strong>برمجه مواقع الويب  </strong></h4>
+      <p><strong>إنشاء وبرمجة مواقع الويب من الصفر  </strong></p>
+    </div>
+    <div class="col-sm-4">
+      
+     <span class="glyphicon"> 
+        <img src="Img-2/ALL-C/B (29)-.png"style="width: 25%;height: 25%" >
+      </span>      
+      <h4><strong>صيانة وتطوير البرمجيات  </strong></h4>
+      <p><strong>صيانة البرامج وتطوير مختلف البرمجيات المعده سابقاً </strong></p>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon"> 
+        <img src="Img-2/ALL-C/B (24)-.png"style="width: 25%;height: 25%" >
+      </span>
+      <h4><strong>فهم الكود البرمجي  </strong></h4>
+      <p><strong> فهم طريقة كتابة وعمل الكود البرمجي وهيكلته  </strong></p>
+    </div>
+  </div>
+  <br><br>
+  <div class="row slideanim">
+    <div class="col-sm-4">
+
+      <span class="glyphicon"> 
+        <img src="Img-2/ALL-C/B (31)-.png"style="width: 25%;height: 25%" >
+      </span>
+
+      <h4><strong>تصميم واجهات المواقع  </strong></h4>
+      <p><strong>تصميم الواجهات الرئيسيه في المواقع والبرامج </strong></p>
+    </div>
+    <div class="col-sm-4">
+      
+      <span class="glyphicon"> 
+        <img src="Img-2/ALL-C/B (9)-.png"style="width: 25%;height: 25%" >
+      </span>
+
+      <h4><strong>دخل إضافي من خلال البرمجة </strong></h4>
+      <p><strong>إيجاد دخل إيضافي جيد من خلال عمل مشاريع برمجيه </strong></p>
+    </div>
+    <div class="col-sm-4">
+      
+    <span class="glyphicon"> 
+        <img src="Img-2/ALL-C/B (21)-.png"style="width: 25%;height: 25%" >
+      </span>
+
+      <h4 style="color:#303030;"><strong>مخزون علمي رائع </strong></h4>
+      <p><strong> ستصبح على درايه بمعضم تفاصيل برمجة مواقع الويب  </strong></p>
+    </div>
+  </div>
+  <hr>
+</div>
+
+<!--___________________________________________( 6 )______________________________________________  -->
+
+
+  <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
+    <h2><bdi>رَسائل موجهه "للمبتدئين" </bdi></h2>
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+<!--___________________________________________( 8 )______________________________________________  -->
+<center>
+    <div style="width: 90%;" class="carousel-inner" role="listbox">
+      <div class="item active">
+        <h4 style="width: 70%;">
+
+          في بداية مشوار التعلم كثير من المعلومات تشعر وكأنك لم تفهمها بالشكل الجيد مهما كررتها 
+              " وهذا امر طبيعي جدا " لان بعض المعلومات لا تُفهم الا بالتطبيق العملي وزيادة التطبيق 
+                العملي فلا تغضب ولا تتسرع في التعلم وتذكر دائماً قاعدة "ما يأتي بسرعه يذهب بسرعه " 
+
+
+      <br>
+      <br>
+       <br>
+
+        <span style="text-decoration: underline"></section>  "  العقبات التي تواجه كل مبرمج مبتدأ #" </section></span></h4>
+      </div>
+      <div class="item">
+        <h4 style="width: 70%;">" 
+بالطبع لا يمكنك بناء نظام قوي لمجرد انك قضيت وقت لتعلم الدورات السابقه وبعد انجازها
+تسأل نفسك كيف ابدأ ببناء نظام او موقع قوي , فالبرمجه تعلمها يتطلب منك صبر فهي 
+معلومات تراكميه كل ما تعلمت اكثر استطعت بناء موقع او برنامج أقوى 
+      <br>
+      <br>
+       <br>
+    
+<span style="text-decoration: underline"><section> الخطوه التاليه بعد انهاء الدورات  #"</section></span></h4>
+      </div>
+
+      <div class="item">
+        <h4 style="width: 70%;">
+          لكل شخص تعلم البرمجه له هدف بعضهم هدفه مادي والبعض والاخر هدفه بناء موقعه الشخصي والكثير من الاهداف 
+      ولكن أريد التنبيه لكل شخص تعلم البرمجه وخصوصاً من كان هدفه مادي "لا تستعجل على العوائد الماديه أبداً" فقط إجعل تركيزك 
+           على جمع اكبر قدر ممكن من المعلومات وتذكر "لا يمكنك انشاء موقع جميل ورائع دون مكتبه جيده من المعلومات " 
+
+      <br>
+      <br>
+
+
+          <span style="text-decoration: underline"></section> "العوائد والاهداف من تعلم البرمجه #"</section></span></h4>
+      </div>
+    </div>
+</center>
+<!--___________________________________________( 9 )______________________________________________  -->
+
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+
+<!--___________________________________________( 10 )______________________________________________  -->
+
+<div id="pricing" class="container-fluid">
+  <div class="text-center">
+    <h2><strong> الحقبة التدريبية  </strong></h2>
+    <span onclick="openNav()">
+    <button class="button3- button3"style="vertical-align:middle"> تنبيه مهم قبل الدخول إلى الدوراة  </button>
+    </span>   
+    <div id="myNav" class="overlay">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <div class="overlay-content">   
+    <h1 style="color: red"><strong> يجب أن تشاهد الدورات كامله في كل مستوى  </strong></h1>
+    <h1 style="color: red"><strong> حتى وان تكررت المعلومات في بعض الأجزاء  </strong></h1>
+    <h1 style="color: red"><strong> فالتكرار مفيد جداً لتثبيت المعلومات ولا تكتفي  </strong></h1>
+    <h1 style="color: red"><strong> بمشاهدة دورة فقط , كل دورة وضعت لهدف محدد </strong></h1>
+    </div>
+ 
+
+  </div>
+<script>
+function openNav() {
+  document.getElementById("myNav").style.height = "100%";
+}
+function closeNav() {
+  document.getElementById("myNav").style.height = "0%";
+}
+</script>
+
+  </div>
+  <br>
+  <div class="row slideanim">
+    <div class="col-sm-4 col-xs-12">
+      <div class="panel panel-default text-center">
+        <div class="panel-heading">
+          <h1><strong> المستوى الأول </strong></h1>
+        </div>
+        <div class="panel-body">
+          <p><strong>عدد الأجزاء لهذا المستوى  :</strong> - 3 أجزاء </p>
+          <p><strong>عدد الدروس في جميع الاجزاء  :</strong> - 12 درس </p><hr>
+          <p><strong>3 -الجزء الأول  </strong><!-- <button class="btn btn-lg"> Text </button>--> </p>
+          <p><strong>3 -الجزء الثاني </strong><!-- <button class="btn btn-lg"> Text </button>--> </p>
+          <p><strong>6 -الجزء الثالث </strong><!-- <button class="btn btn-lg"> Text </button>--> </p>
+        </div>
+        <div class="panel-footer">
+          <h2> يلزم إتقان النقاط التاليه قبل الإنتقال للمسوى الأعلى  </h2>
+          <h4> HTML & CSS</h4>
+          <h4>JvaScript</h4>
+          <h4>FrameWork ( jquery,Bootstrap )</h4>
+           <a href="index.html/Cl1/cl1.html"target="_BLANK">
+            <button class="btn btn-lg">إنتقل لهذا المستوى </button>
+           </a>
+        </div>
+      </div>      
+    </div> 
+<!--_______________________________"**"_____________________________________  -->
+
+    <div class="col-sm-4 col-xs-12">
+      <div class="panel panel-default text-center">
+        <div class="panel-heading">
+          <h1><strong> المستوى  الثاني  </strong></h1>
+        </div>
+        <div class="panel-body">
+          <p><strong>عدد الأجزاء لهذا المستوى  :</strong> - 3 أجزاء </p>
+          <p><strong>عدد الدروس في جميع الاجزاء  :</strong> - 12 درس </p><hr>
+
+          <p><strong>3 -الجزء الأول  </strong><!-- <button class="btn btn-lg"> Text </button>--> </p>
+          <p><strong>3 -الجزء الثاني </strong><!-- <button class="btn btn-lg"> Text </button>--> </p>
+          <p><strong>6 -الجزء الثالث </strong><!-- <button class="btn btn-lg"> Text </button>--> </p>
+        </div>
+        <div class="panel-footer">
+          <h2> يلزم إتقان النقاط التاليه قبل الإنتقال للمسوى الأعلى </h2>
+          <h4>Node.JS</h4>
+          <h4>Login JavaScript</h4>
+          <h4>Login CSS&HTML</h4>
+          <a href="index.html/Cl2/cl2.html"target="_BLANK">
+            <button class="btn btn-lg">إنتقل لهذا المستوى </button>
+           </a>
+        </div>
+      </div>      
+    </div>  
+<!--_______________________________"**"_____________________________________  -->
+
+    <div class="col-sm-4 col-xs-12">
+      <div class="panel panel-default text-center">
+        <div class="panel-heading">
+          <h1><strong> المستوى الثالث </strong></h1>
+        </div>
+        <div class="panel-body">
+          <p><strong>عدد الأجزاء لهذا المستوى  :</strong> - 3 أجزاء </p>
+          <p><strong>عدد الدروس في جميع الاجزاء  :</strong> - 9 درس </p><hr>
+          <p><strong>3 -الجزء الأول  </strong><!-- <button class="btn btn-lg"> Text </button>--> </p>
+          <p><strong>3 -الجزء الثاني </strong><!-- <button class="btn btn-lg"> Text </button>--> </p>
+          <p><strong>3-الجزء الثالث </strong><!-- <button class="btn btn-lg"> Text </button>--> </p>
+        </div>
+        <div class="panel-footer">
+          <h2>يُفترض أن تكون قد أتقنت النُقاط التاليه بعد إنجازك جميع المستويات </h2>
+          <h4>python</h4>
+          <h4>PHP</h4>
+          <h4>PHP and MYsql</h4>
+          <a href="index.html/Cl3/cl3.html"target="_BLANK">
+            <button class="btn btn-lg">إنتقل لهذا المستوى </button>
+           </a>
+        </div>
+      </div>      
+    </div>    
+  </div>
+</div>
+
+<!--___________________________________________( 11 )____________________________________________  -->
+
+<div id="contact" class="container-fluid bg-grey">
+  <h2 class="text-center"> قنوات التواصل  </h2>
+     <div class="row slideanim">
+      <center>    
+        <a href="https://pic.sopili.net/lnk/-/email-html/show/?text=bba.0001000%40gmail.com"target="_BLANK"  >
+          <div class="col-sm-3">
+             <span class="glyphicon">  
+              <img src="Img-2/APL/gm-.jpg"style="width: 25%;height: 25%">
+             </span>
+           <h4><strong>E-Mail</strong></h4>
+        </div>
+      </a>
+  <a href="https://twitter.com/heem_42  "target="_BLANK">
+    <div class="col-sm-3">
+       <span class="glyphicon"> 
+        <img src="Img-2/APL/tw-1.png"style="width: 25%;height: 25%" >
+      </span>
+      <h4><strong>Twitter</strong></h4>
+    </div>
+  </a>
+  <a href="https://www.snapchat.com/add/HEEM_42"target="_BLANK">
+    <div class="col-sm-3">
+   <span class="glyphicon"> 
+        <img src="Img-2/APL/sn-1.png"style="width: 25%;height: 25%" >
+      </span>
+      <h4><strong>SnapChat</strong></h4>
+    </div>
+</a>
+
+<a href="https://www.instagram.com/Heem_42_/"target="_BLANK">
+    <div class="col-sm-3">
+        <span class="glyphicon"> 
+        <img src="Img-2/APL/in-.png"style="width: 25%;height: 25%" >
+        </span>
+      <h4><strong>Inastagram</strong></h4>
+    </div>
+  </a>
+ </center>
+      <br>
+      <br>
+      <br>
+    </div>
+  <hr>
+  <h4 class="text-center"> ملاحضة : هذا الموقع تم إنشائه لغرض التسهيل في البحث عن افضل الدورات للمبتدئين وهو صدقة جاريه على نية والدي ووالدتي   </h4>
+  <br>
+  <hr>
+      <h2 class="text-center">للشكاوى والإقتراحات </h2> 
+  <div class="row">
+    <div class="col-sm-5">
+      <p>(-- HEEM programmer --)</p>
+      <p><span class="glyphicon glyphicon-map-marker"></span> Abha, KSA</p>
+      <p><span class="glyphicon glyphicon-phone"></span> +966 533887177</p>
+      <p><span class="glyphicon glyphicon-envelope"></span> SAHM11@Outlook.sa</p>
+    </div>
+    <div class="col-sm-7 slideanim">
+      <div class="row">
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+        </div>
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+        </div>
+      </div>
+      <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea><br>
+      <div class="row">
+        <div class="col-sm-12 form-group">
+          <button class="btn btn-default pull-right" type="submit">Send</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<!--___________________________________________( 12 )___________________________________________  -->
+ <br>
+ <center> 
+<footer>
+  <a href="#myPage" title=" العوده للأعلى  ">
+    <span class="glyphicon">
+      <img src="Img-2/TO-TOP2.PNG"style="width: 30%;height: 5%" >
+    </span>
+  </a>
+  <p>
+    <big> العوده للأعلى</big> </p>
+</footer>
+</center>
+          </div>
+
+
+<!--___________________________________________( 13 )_____________________________________________  -->
+
+<script>
+$(document).ready(function(){
+  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+    if (this.hash !== "") {
+      event.preventDefault();
+      var hash = this.hash;
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 900, function(){
+        window.location.hash = hash;
+      });
+    } 
+  });  
+  $(window).scroll(function() {
+    $(".slideanim").each(function(){
+      var pos = $(this).offset().top;
+      var winTop = $(window).scrollTop();
+        if (pos < winTop + 600) {
+          $(this).addClass("slide");
+        }
+    });
+  });
+})
+</script>
+
+<!--___________________________________________( 14 )___________________________________________  -->
+
+
+</body>
+</html>
